@@ -1,5 +1,7 @@
 //jshint esversion:6
-
+require("dotenv").config();
+const user = process.env.USER;
+const password = process.env.PASSWORD;
 const express = require("express");
 const bodyParser = require("body-parser");
 // const date = require(__dirname + "/date.js");
@@ -11,7 +13,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-mongoose.connect("mongodb+srv://admin-khaled:01154264404@cluster0.5kmrw.mongodb.net/todolistDB?retryWrites=true&w=majority",  {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect("mongodb+srv://"+user+":"+password+"@cluster0.5kmrw.mongodb.net/todolistDB?retryWrites=true&w=majority",  {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 mongoose.set('useFindAndModify', false);
 const itemSchema = new mongoose.Schema({
   name: String
