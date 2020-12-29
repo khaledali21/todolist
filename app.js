@@ -67,6 +67,7 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res){
 
   const itemName = req.body.newItem;
+
   const listName = req.body.list;
   const newItem = new Item({
     name: itemName
@@ -93,7 +94,7 @@ app.post("/delete", function(req, res){
   const itemID = req.body.checkbox;
   const listName = req.body.listName;
   if(listName === "Today"){
-    Item.findOneAndDelete (itemID, function(err){
+    Item.findOneAndDelete ({_id: itemID}, function(err){
       if(err){
         console.log(err);
       }
