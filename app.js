@@ -42,7 +42,7 @@ const listSchema = new mongoose.Schema({
 });
 const List = mongoose.model("list", listSchema);
 app.get("/", function(req, res) {
-  Item.find(function(err, items){
+  Item.find({}, function(err, items){
     if(err){
       console.log(err);
     }
