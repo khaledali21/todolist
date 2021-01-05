@@ -4,7 +4,6 @@ const user = process.env.USER;
 const password = process.env.PASSWORD;
 const express = require("express");
 const bodyParser = require("body-parser");
-// const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const app = express();
