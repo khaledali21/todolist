@@ -9,7 +9,11 @@ h1 {
   color: #fff;
   padding: 10px;
 }
-
+.lists{
+  text-decoration:none;
+  color: black;
+  font-size: 20px;
+}
 .box {
   max-width: 400px;
   margin: 50px auto;
